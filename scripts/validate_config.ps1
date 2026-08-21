@@ -1,20 +1,20 @@
 Write-Host "Validando archivos de configuracion..." -ForegroundColor Cyan
 
-# Validar formato JSON
+# 1. Validar formato JSON
 try {
     $json = Get-Content -Raw -Path "config/settings.json" | ConvertFrom-Json
-    Write-Host "✔ settings.json OK" -ForegroundColor Green
+    Write-Host "[OK] settings.json es valido" -ForegroundColor Green
 } catch {
-    Write-Host "❌ Error en formato de settings.json" -ForegroundColor Red
+    Write-Host "[ERROR] Formato invalido en config/settings.json" -ForegroundColor Red
     exit 1
 }
 
-# Validar formato YAML
+# 2. Validar formato YAML
 try {
-    python -c "import yaml; yaml.safe_load(open('config/formulas.yaml'))"
-    Write-Host "✔ formulas.yaml OK" -ForegroundColor Green
+    python -c "import yaml; yaml.safe_load(open('config/formulas.yaml', encoding='utf-8'))"
+    Write-Host "[OK] formulas.yaml es valido" -ForegroundColor Green
 } catch {
-    Write-Host "❌ Error en formato de formulas.yaml" -ForegroundColor Red
+    Write-Host "[ERROR] Formato invalido en config/formulas.yaml" -ForegroundColor Red
     exit 1
 }
 
