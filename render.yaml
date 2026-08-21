@@ -2,17 +2,31 @@ services:
   - type: web
     name: cotizador-backend
     env: python
+    region: ohio # Puedes cambiarlo a oregon, frankfurt, etc.
+    plan: free
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    autoDeploy: true
+    branch: main
     envVars:
       - key: DATABASE_URL
         fromDatabase:
           name: cotizador-db
           property: connectionString
-      - key: PYTHON_VERSION
-        value: 3.11.0
+      - key: SECRET_KEY
+        generateValue: true # Render generará una clave segura automáticamente
+      - key: AWS_ACCESS_KEY_ID
+        sync: false # sync: false indica que llenarás este valor manualmente en el dashboard
+      - key: AWS_SECRET_ACCESS_KEY
+        sync: false
+      - key: AWS_REGION
+        value: us-east-1
+      - key: S3_BUCKET_NAME
+        value: cotizador-app-storage
 
 databases:
   - name: cotizador-db
-    databaseName: cotizador
+    plan: free
+    databaseName: cotizador_db
     user: cotizador_user
+    region: ohio
