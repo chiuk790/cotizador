@@ -1,0 +1,6 @@
+{
+  "margen_mayoreo": "0.25",
+  "margen_menudeo": "0.35",
+  "min_cantidad_mayoreo": 12,
+  "iva": 0.16
+}

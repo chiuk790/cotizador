@@ -1,0 +1,58 @@
+# ==========================================
+# Logs y Archivos Temporales
+# ==========================================
+*.log
+logs/
+
+# ==========================================
+# Variables de Entorno y Datos Sensibles
+# ==========================================
+.env
+.env.*
+!.env.example
+
+# ==========================================
+# Entornos Virtuales y Python (Backend)
+# ==========================================
+backend_env/
+venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+*.sqlite3
+.pytest_cache/
+
+# ==========================================
+# Flutter / Dart / Móvil (Frontend)
+# ==========================================
+.dart_tool/
+.packages
+.pub/
+.pub-cache/
+.flutter-plugins
+.flutter-plugins-dependencies
+frontend/build/
+android/.gradle/
+android/app/debug/
+android/app/release/
+ios/Pods/
+ios/Runner.xcworkspace
+
+# ==========================================
+# Compilados y Reportes
+# ==========================================
+build/
+dist/
+coverage/
+
+# ==========================================
+# IDEs y Editores de Código
+# ==========================================
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db

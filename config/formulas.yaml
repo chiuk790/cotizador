@@ -1,0 +1,19 @@
+corte_laser:
+  costo_material: 5.0
+  costo_maquina: 2.0
+  costo_diseno: 3.0
+  costo_mano_obra: 1.5
+
+sublimacion:
+  costo_pieza: 8.0
+  costo_insumos: 2.0
+  mano_obra: 1.0
+
+impresion_3d:
+  costo_filamento: 10.0
+  costo_minuto: 0.5
+  posprocesado: 2.0
+
+margenes:
+  mayoreo: 0.25
+  menudeo: 0.35
