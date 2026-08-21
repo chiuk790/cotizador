@@ -60,3 +60,7 @@ Thumbs.db
 # Directorios de respaldos
 /backups/
 *.sql
+
+# Archivos y carpetas de logs
+/logs/
+*.log
