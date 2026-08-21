@@ -56,3 +56,7 @@ coverage/
 *.swo
 .DS_Store
 Thumbs.db
+
+# Directorios de respaldos
+/backups/
+*.sql
